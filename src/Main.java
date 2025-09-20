@@ -1,15 +1,37 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import Service.BasketService;
+import Service.CustomerService;
+import Service.ProductService;
+
+import static Service.BasketService.runBasketService;
+import static Service.CustomerService.runCustomerService;
+import static Service.ProductService.runProductService;
+import static ustils.ustils1.scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("Welcome");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        stop : while (true){
+            System.out.println("""
+                    1 - Product_Service
+                    2 - Customer_Service
+                    3 - Basket_Service
+                    4 - Exit 
+                    """);
+            switch (scanner.nextInt()){
+                case 1 ->{
+                    runProductService();
+                } case 2 ->{
+                    runCustomerService();
+                } case 3 ->{
+                    runBasketService();
+                } case 4 ->{
+                    System.out.println("Goodbye");
+                    return;
+                }default -> {
+                    System.out.println("wrong choice");
+                }
+            }
         }
     }
 }
