@@ -1,7 +1,3 @@
-import Service.BasketService;
-import Service.CustomerService;
-import Service.ProductService;
-
 import static Service.BasketService.runBasketService;
 import static Service.CustomerService.runCustomerService;
 import static Service.ProductService.runProductService;
@@ -16,8 +12,8 @@ public class Main {
                     1 - Product_Service
                     2 - Customer_Service
                     3 - Basket_Service
-                    4 - Exit 
-                    """);
+                    4 - Exit\s
+                   \s""");
             switch (scanner.nextInt()){
                 case 1 ->{
                     runProductService();

@@ -21,7 +21,6 @@ public final class Product implements Cloneable{
         return name;
     }
 
-
     public Double getPrice() {
         return price;
     }
